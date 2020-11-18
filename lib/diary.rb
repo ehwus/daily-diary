@@ -5,7 +5,7 @@ class Diary
     @database = database_class
   end
 
-  def add(entry)
-    @database.query("INSERT INTO entries (id, entry) VALUES (DEFAULT, '#{entry}');")
+  def add(title, body)
+    @database.query("INSERT INTO entries (id, title, body) VALUES (DEFAULT, '#{title}', '#{body}');")
   end
 end
