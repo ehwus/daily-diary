@@ -1,4 +1,4 @@
-require 'PG'
+require 'pg'
 
 def set_up_test_database
   connection = PG.connect(dbname: 'diary_manager_test')
