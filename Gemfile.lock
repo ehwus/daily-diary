@@ -12,7 +12,12 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
+    commonjs (0.2.7)
     diff-lcs (1.4.4)
+    font-awesome-less (4.7.0)
+      less (>= 2.4.0)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     mustermann (1.1.1)
@@ -73,6 +78,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  font-awesome-less
   pg
   rack
   rspec

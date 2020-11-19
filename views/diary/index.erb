@@ -1,14 +1,40 @@
-<h1>My Daily Diary</h1>
-
-<% Diary.all.each do |entry| %>
-<div>
-  <a href="./diary/<%= entry.id %>"><%= entry.title %></a>
-</div>
-<% end%>
-
-
-<form method="post">
-  <input type="text" name="title" placeholder="Title" />
-  <input type="text" name="body" placeholder="Body" />
-  <input type="submit" value="Submit">
-</form>
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <style>
+    @import "font-awesome-sprockets";
+    @import "font-awesome";
+  </style>
+  <body>
+    <h1 class="center">My Daily Diary</h1>
+    <h2>Entries</h2>
+    <hr>
+    <div class="row">
+      <% Diary.all.each do |entry| %>
+        <div class="col s12 m2">
+          <div class="card-panel purple darken-2">
+            <a class="white-text" href="./diary/<%= entry.id %>"><%= entry.title %></a>
+            <i class="far fa-trash-alt"></i>
+          </div>
+        </div>
+      <% end%>
+    </div>
+    <h2>New</h2>
+    <hr>
+    <div class="row center">
+      <div class="col s12 m5">
+        <div class="card-panel purple darken-3">
+          <form method="post">
+            <input type="text" name="title" placeholder="Title" />
+            <input type="text" name="body" placeholder="Body" />
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
