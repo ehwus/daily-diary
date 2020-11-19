@@ -26,6 +26,9 @@ require_relative './set_up_test_database'
 
 Capybara.app = DiaryApp
 
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   config.before(:each) do
     set_up_test_database
