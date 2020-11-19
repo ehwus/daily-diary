@@ -1,5 +1,5 @@
 ## Daily Diary 📔
-A Ruby 💎 (with Sinatra) simple web app using the Materialize CSS framework for a single user to save and view diary entries that are saved in to PostgreSQL. This was my first project combining an MVC powered web app with a database. I built the app using the principles of TDD, and the code has an 100% coverage in simplecov.
+A Ruby 💎 (with Sinatra) simple web app using the Materialize CSS framework for a single user to save and view diary entries that are saved in to PostgreSQL. This was my first project combining an MVC powered web app with a database. I built the app using the principles of TDD, and the code has a 100% coverage in simplecov.
 
 ## Usage
 
