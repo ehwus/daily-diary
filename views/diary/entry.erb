@@ -15,11 +15,11 @@
           </div>
           <div class="card-action">
             <form method="get" action="/diary">
-              <button>Back</button>
+              <button class="waves-effect waves-light btn">Back</button>
             </form>
             <form method="post" action="/diary/<%= @entry.id%>">
               <input type="hidden" name="_method" value="DELETE" />
-              <input type="submit" value="Delete" />
+              <button class="waves-effect waves-light btn">Delete</button>
             </form>
           </div>
         </div>

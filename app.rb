@@ -7,7 +7,7 @@ require './database_connection_setup'
 class DiaryApp < Sinatra::Base
   enable :sessions, :method_override
   get '/' do
-    'Hello Diary'
+    redirect('/diary')
   end
 
   get '/diary' do
