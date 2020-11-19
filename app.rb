@@ -5,6 +5,7 @@ require_relative './lib/diary'
 require './database_connection_setup'
 
 class DiaryApp < Sinatra::Base
+  enable :sessions, :method_override
   get '/' do
     'Hello Diary'
   end
@@ -21,5 +22,10 @@ class DiaryApp < Sinatra::Base
   get '/diary/:entry' do
     @entry = Diary.select(params[:entry].to_i)
     erb :'/diary/entry'
+  end
+
+  delete '/diary/:entry' do
+    Diary.delete(params[:entry].to_i)
+    redirect('/diary')
   end
 end
