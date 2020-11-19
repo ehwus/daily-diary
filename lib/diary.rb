@@ -1,9 +1,6 @@
 require 'pg'
 
 class Diary
-  # def add(title, body)
-  #   @database.query("INSERT INTO entries (id, title, body) VALUES (DEFAULT, '#{title}', '#{body}');")
-  # end
   def self.create(title:, body:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'diary_manager_test')
@@ -20,12 +17,13 @@ class Diary
       connection = PG.connect(dbname: 'diary_manager')
     end
     selection = connection.exec("SELECT * FROM entries;")
-    selection.map { |entry| Diary.new(title: entry['title'], body: entry['body']) }
+    selection.map { |entry| Diary.new(id: entry['id'], title: entry['title'], body: entry['body']) }
   end
   
-  attr_reader :title, :body
+  attr_reader :title, :body, :id
 
-  def initialize(title:, body:)
+  def initialize(id:, title:, body:)
+    @id = id
     @title = title
     @body = body
   end

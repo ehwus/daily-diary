@@ -4,8 +4,9 @@ require 'diary'
 require 'pg'
 
 describe Diary do
-  it "initialises with a title and body" do
-    test = Diary.new(title: "Test", body: "Test Body")
+  it "initialises with a title, body and id" do
+    test = Diary.new(id: 1, title: "Test", body: "Test Body")
+    expect(test.id).to eq(1)
     expect(test.title).to eq("Test")
     expect(test.body).to eq("Test Body")
   end
