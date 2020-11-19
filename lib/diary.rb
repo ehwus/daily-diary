@@ -14,6 +14,10 @@ class Diary
     selection = DatabaseConnection.query("SELECT * FROM entries WHERE id='#{id}';")
     selection.map { |entry| Diary.new(id: entry['id'], title: entry['title'], body: entry['body']) }.first
   end
+
+  def self.delete(id)
+    DatabaseConnection.query("DELETE FROM entries WHERE id='#{id}';")
+  end
   
   attr_reader :title, :body, :id
 

@@ -30,4 +30,14 @@ describe Diary do
       expect(returned_object.body).to eq("Bar")
     end
   end
+
+  describe ".delete" do
+    it "removes an entry with given id" do
+      Diary.create(title: "Foo", body: "Bar")
+      id = Diary.all.first.id
+      Diary.delete(id)
+      expect(Diary.all).to be_empty
+    end
+
+  end
 end
