@@ -20,4 +20,14 @@ describe Diary do
       expect(entry.body).to eq("Bar")
     end
   end
+
+  describe ".select" do
+    it "returns a Diary object by ID" do
+      Diary.create(title: "Foo", body: "Bar")
+      id = Diary.all.first.id
+      returned_object = Diary.select(id)
+      expect(returned_object.title).to eq("Foo")
+      expect(returned_object.body).to eq("Bar")
+    end
+  end
 end

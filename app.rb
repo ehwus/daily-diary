@@ -16,4 +16,9 @@ class DiaryApp < Sinatra::Base
     Diary.create(title: params[:title], body: params[:body])
     redirect('/diary')
   end
+
+  get '/diary/:entry' do
+    @entry = Diary.select(params[:entry].to_i)
+    erb :'/diary/entry'
+  end
 end
