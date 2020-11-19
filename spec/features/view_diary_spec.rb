@@ -20,4 +20,16 @@ feature "View diary" do
     expect(page).to have_content("Foo")
     expect(page).to have_content("Bar")
   end
+
+  scenario "lets user click back into the list of diary entries" do
+    Diary.create(title: "Test 1", body: "Hiya")
+    Diary.create(title: "Test 2", body: "Hello")
+    visit('/diary')
+    click_link('Test 1')
+    expect(page).not_to have_content("Test 2")
+    expect(page).to have_button("Back")
+    click_button("Back")
+    expect(page).to have_content("Test 1")
+    expect(page).to have_content("Test 2")
+  end
 end
