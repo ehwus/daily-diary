@@ -2,6 +2,7 @@
 
 require 'sinatra'
 require_relative './lib/diary'
+require './database_connection_setup'
 
 class DiaryApp < Sinatra::Base
   get '/' do

@@ -17,11 +17,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 # Set up Capybara for integrations testing
+
+ENV['ENVIRONMENT'] = 'test'
+
 require 'capybara/rspec'
 require './app'
 require_relative './set_up_test_database'
-
-ENV['ENVIRONMENT'] = 'test'
 
 Capybara.app = DiaryApp
 
